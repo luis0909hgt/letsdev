@@ -1,0 +1,28 @@
+* {
+    /* Config padrão que se repete em todo o site */
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+  
+    /* A fonte para todo o site, com opções, caso a primeira não esteja disponível */
+    font-family: "Montserrat", -apple-system, "Roboto", sans-serif;
+  
+    /* Poderia ir nos estilos de texto específico */
+    color: #201e1f;
+    font-weight: 400;
+  }
+  
+body {
+    display: flex;
+    justify-content: center;
+}
+
+body #root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
