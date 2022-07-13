@@ -1,8 +1,21 @@
-function Titulo(props: any) {
-    var titulo =props.titulo;
-    titulo = "Página " + titulo;
+interface TituloProps {
+    titulo: string;
+}
 
-    return <h1>{titulo}</h1>
+function Titulo({ titulo }: TituloProps) {
+    return ( 
+    <h1
+        style={{
+            color: "#7D2EBA",
+            fontWeight: 600,
+            fontStyle:  "italic",
+            textAlign: "center",
+            marginBottom: "60px",
+        }}
+    >
+        {titulo}
+        </h1>
+    );
 }
 
 export default Titulo;

@@ -1,7 +1,12 @@
-import { FormBasico } from "./telas";
+import { FormBasico, FormCompleto } from "./telas";
 
 function App() {
-  return <FormBasico />
+  return (
+    <>
+      <FormCompleto />
+     {/* <FormBasico /> */}
+    </>
+  )
 };
 
 export default App;

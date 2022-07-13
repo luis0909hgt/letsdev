@@ -1,18 +1,32 @@
-import React, { FormEvent } from 'react';
-import { Logo } from '../../imagens';
+import React, { FormEvent, useState, useEffect } from 'react';
+import * as s from "./styled-form-completo";
+import { Banner } from '../../imagens';
+import Titulo from '../../componentes/Titulo';
+import { Row, ColumnInput, Label, RowSelectors, InputButton, Footer  } from '../../componentes';
+
+const FormCompleto: React.FC = () => {
+    const [nome, setNome] = useState("");
+    const [idade, setIdade] = useState("");
+    const [ocupacao, setOcupacao] = useState("");
+    const [areaPreferencia, setAreaPreferencia] = useState("Front-end");
+    const [curriculo, setCurriculo] = useState<any>();
+    const [descricaoPerfil, setDescricaoPerfil] = useState("");
+    const [receberEmail, setReceberEmail] = useState(false);
+
+
 
 function enviarFormulario(event: FormEvent) {
     event.preventDefault();
 
-//     const mensagem = `${nome}, tem ${idade} anos e atualmente é ${ocupacao}. Se ingressar no mundo do desenvolvimento, tem preferência por atuar como ${areaPreferencia}.
+    const mensagem = `${nome}, tem ${idade} anos e atualmente é ${ocupacao}. Se ingressar no mundo do desenvolvimento, tem preferência por atuar como ${areaPreferencia}.
 
-//         Em sua descrição de perfil consta: "${descricaoPerfil}".
+        Em sua descrição de perfil consta: "${descricaoPerfil}".
 
-//         Deseja receber e-mail: ${receberEmail ? "Sim" : "Não"}
-//         Currículo: ${curriculo ? curriculo.files[0].name : "Não informado"}
-//         `;
+        Deseja receber e-mail: ${receberEmail ? "Sim" : "Não"}
+        Currículo: ${curriculo ? curriculo ?.name : "Não informado"}
+        `;
 
-//     alert(mensagem);
+    alert(mensagem);
     }
 
   const cancelar = (event: FormEvent) => {
@@ -20,45 +34,61 @@ function enviarFormulario(event: FormEvent) {
     alert("Cancelando...");
   };
 
-const FormCompleto: React.FC = () => {
+    useEffect(() => {
+        console.log('OK');
+    }, []);
+
   return (
-        <div id="container">
-            <h1>Formulário 2ª Edição</h1>
-            <h2>
+    <>
+        <s.Image src={Banner} alt="Imagem Let's DEv" />
+        <s.Container id="container">
+            <Titulo titulo='Formulário 2ª Edição' />
+            <s.H2>
              Seja bem-vindo(a) ao primeiro desafio da sua jornada de aprendizado!
-            </h2>
-            <p id="instrucao">
+            </s.H2>
+            <s.Instrucao>
                 Preencha corretamente os campos abaixo para ingressar nessa SUPER JORNADA com o time Paipe!
-            </p>
-            <img src={Logo} alt="Imagem Let's DEv" />
+            </s.Instrucao>
     
-            <hr />
-            <form onSubmit={enviarFormulario}>
-                <p id="aviso"> 
+            <s.Divisor />
+            <s.Formulario onSubmit={enviarFormulario}>
+                <s.Aviso> 
                     <strong>ATENÇÃO:</strong> os campos contendo o asterisco(*) são de preenchiento obrigatório!
-                    </p>
+                    </s.Aviso>
                 
-                    <div className="row">
-                        <div className="column-input input-text">
-                            <label>Nome completo: *</label>
+                    <Row>
+                        <ColumnInput className= "input-text">
+                            <Label>Nome completo: *</Label>
                             <input
                                 type="text"
                                 name="nome"
                                 placeholder="Digite seu nome aqui"
                                 required 
+                                value={nome}
+                                onChange={(e) => setNome(e.target.value)}
+                                />
+                        </ColumnInput>
+    
+                        <ColumnInput>
+                            <Label>Idade:</Label>
+                            <input
+                                type="number"
+                                name="idade"
+                                placeholder="Digite sua idade"
+                                value={idade}
+                                onChange={(e) => setIdade(e.target.value)}
                             />
-                        </div>
+                        </ColumnInput>
+                    </Row>
     
-                        <div className="column-input">
-                            <label>Idade:</label>
-                            <input type="number" name="idade" placeholder="Digite sua idade"/>
-                        </div>
-                    </div>
-    
-                    <div className="row">
-                        <div className="column-input select">
-                            <label>Ocupação:</label>
-                            <select name="ocupacao">
+                    <Row>
+                        <ColumnInput className="select">
+                            <Label>Ocupação:</Label>
+                            <select 
+                                name="ocupacao"
+                                value={ocupacao}
+                                onChange={(e) => setOcupacao(e.target.value)}
+                            >
                                 <option>Selecione sua ocupação</option>
                                 <option>Estudante</option>
                                 <option>Empregado CLT</option>
@@ -66,48 +96,83 @@ const FormCompleto: React.FC = () => {
                                 <option>Autônomo</option>
                                 <option>Outros</option>
                             </select>
-                        </div>
+                        </ColumnInput>
     
-                        <div className="column-input">
-                            <label>Área de preferência:</label>
-                            <div className="row" style={{gap: '25px'}}>
-                                <div className="row-selectors">
-                                    <input id="front-end" name="area-preferencia" type="radio" value="front-end"/> 
-                                    <label htmlFor="front-end">Front-End</label>
-                                    <input id="back-end" name="area-preferencia" type="radio" value="Back-End"/> 
-                                    <label htmlFor="back-end">Back-End</label>
-                                    <input id="full-stack" name="area-preferencia" type="radio" value="Full-Stack"/> 
-                                    <label htmlFor="full-stack">Full-Stack</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <div className="column-input">
-                    <label id="curriculum">Anexar currículo:</label>
-                    <input id="curriculum" type="file"/>
-                </div>
+                        <ColumnInput>
+                            <Label>Área de preferência:</Label>
+                            <Row style={{gap: '25px'}}>
+                                <RowSelectors>
+                                    <input 
+                                        id="front-end" 
+                                        name="area-preferencia" 
+                                        type="radio" 
+                                        value="Front-end"
+                                        checked={areaPreferencia == "Front-end"}
+                                        onChange={(e) => setAreaPreferencia(e.target.value)}
+                                        /> 
+                                    <Label htmlFor="front-end">Front-End</Label>
+                                    <input 
+                                        id="back-end" 
+                                        name="area-preferencia" 
+                                        type="radio" 
+                                        value="Back-end"
+                                        checked={areaPreferencia == "Back-end"}
+                                        onChange={(e) => setAreaPreferencia(e.target.value)}
+                                    /> 
+                                    <Label htmlFor="back-end">Back-End</Label>
+                                    <input 
+                                        id="full-stack" 
+                                        name="area-preferencia" 
+                                        type="radio" 
+                                        value="Full-stack"
+                                        checked={areaPreferencia == "Full-stack"}
+                                        onChange={(e) => setAreaPreferencia(e.target.value)}
+                                    /> 
+                                    <Label htmlFor="full-stack">Full-Stack</Label>
+                                </RowSelectors>
+                            </Row>
+                        </ColumnInput>
+                    </Row>
+                <ColumnInput>
+                    <Label>Anexar currículo:</Label>
+                    <InputButton 
+                        type="file" 
+                        name="curriculo"
+                        onChange={(e) => setCurriculo(e.target?.files[0])}
+                    />
+                </ColumnInput>
     
-                <div className="column-input" style={{marginBottom: '50px'}}>
-                    <label id="description">Descrição do perfil do candidato:</label>
+                <ColumnInput style={{marginBottom: '50px'}}>
+                    <Label>Descrição do perfil do candidato:</Label>
                     <textarea
                         name="descricao-perfil"
                         placeholder="Nos fale um pouco sobre o seu perfil pessoal e profissional"
+                        value={descricaoPerfil}
+                        onChange={(e) => setDescricaoPerfil(e.target.value)}
                         >
                     </textarea>
-                </div>
+                </ColumnInput>
     
-                <div className="column-input" style={{marginBottom: '115px'}}>
-                    <div className="row-selectors">
-                        <input type="checkbox" id="receber-email" name="receber-email"/>
-                        <label htmlFor="receber-email">Deseja receber notificações sobre vagas por e-mail.</label>
-                    </div>
-                </div>
-                <div className="row" style={{justifyContent: 'space-between'}}>
-                    <button onClick={cancelar}>Cancelar</button>
-                    <input type="submit" value="Enviar" />
-                </div>
-            </form>
-        </div>
+                <ColumnInput style={{marginBottom: '115px'}}>
+                    <RowSelectors>
+                        <input 
+                            type="checkbox" 
+                            id="receber-email" 
+                            name="receber-email"
+                            checked={receberEmail}
+                            onChange={() => setReceberEmail(!receberEmail)}
+                        />
+                        <Label htmlFor="receber-email">Deseja receber notificações sobre vagas por e-mail.</Label>
+                    </RowSelectors>
+                </ColumnInput>
+                <Row style={{justifyContent: 'space-between'}}>
+                    <InputButton type="button" onClick={cancelar} value="Cancelar" outlined/>
+                    <InputButton type="submit" value="Enviar" />
+                </Row>
+            </s.Formulario>
+        </s.Container>
+        <Footer/>
+    </>
   );
 }
 
