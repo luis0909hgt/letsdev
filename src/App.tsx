@@ -1,9 +1,10 @@
-import { FormBasico, FormCompleto } from "./telas";
+import { FormBasico, FormCompleto, Home, ConsumindoApis} from "./telas";
 
 function App() {
   return (
     <>
-      <FormCompleto />
+    <Home />
+      {/* <FormCompleto /> */}
      {/* <FormBasico /> */}
     </>
   )
