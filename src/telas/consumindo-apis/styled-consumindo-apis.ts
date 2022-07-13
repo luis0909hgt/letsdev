@@ -18,8 +18,8 @@ export const Content = styled.div`
   h1 {
     font-style: italic;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 59px;
+    font-size: 3rem;
+    line-height: 3.6875rem;
     text-align: center;
     color: #7d2eba;
     margin-bottom: 90px;
@@ -27,16 +27,16 @@ export const Content = styled.div`
 
   h2 {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 1.5rem;
+    line-height: 1.625rem;
     text-align: center;
     color: #201e1f;
   }
 
   p#desc {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 1rem;
+    line-height: 1.625rem;
     color: #201e1f;
     margin-top: 10px;
   }
@@ -54,8 +54,8 @@ export const Content = styled.div`
 
   h3 {
     font-weight: 600;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 1rem;
+    line-height: 1.625rem;
     color: #7d2eba;
     margin: 60px 0 30px 0;
     width: 100%;
@@ -67,14 +67,14 @@ export const Content = styled.div`
     li {
       margin-left: 20px;
       font-weight: 400;
-      font-size: 16px;
-      line-height: 35px;
+      font-size: 1rem;
+      line-height: 2.1875rem;
       color: #201e1f;
 
       a {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 35px;
+        font-size: 1rem;
+        line-height: 2.1875rem;
         text-decoration-line: underline;
         color: #1b3bae;
       }
@@ -83,16 +83,16 @@ export const Content = styled.div`
 
   span {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 1rem;
+    line-height: 1.625rem;
     color: #000000;
     width: 100%;
     margin-bottom: 150px;
 
     strong {
       font-weight: 500;
-      font-size: 16px;
-      line-height: 26px;
+      font-size: 1rem;
+      line-height: 1.625rem;
       color: #000000;
     }
   }
@@ -100,15 +100,15 @@ export const Content = styled.div`
 
 export const Objetivo = styled.p`
   font-weight: 500;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625rem;
   color: #201e1f;
   width: 100%;
 
   strong {
     font-weight: 600;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
     color: #7d2eba;
   }
 `;

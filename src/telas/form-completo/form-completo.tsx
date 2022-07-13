@@ -31,7 +31,7 @@ function enviarFormulario(event: FormEvent) {
 
   const cancelar = (event: FormEvent) => {
     event.preventDefault();
-    alert("Cancelando...");
+    window.location.href = "/";
   };
 
     useEffect(() => {

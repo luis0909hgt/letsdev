@@ -26,3 +26,29 @@ body #root {
     flex-direction: column;
     align-items: center;
 }
+
+/*Responsividade*/
+
+@media (min-width: 992px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 95%;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 85%;
+    }
+}
+
+@media (max-width: 479px) {
+    html {
+        font-size: 75%;
+    }
+}

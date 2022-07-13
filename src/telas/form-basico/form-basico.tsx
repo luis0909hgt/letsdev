@@ -38,7 +38,7 @@ function tagPorNome(nomeTag: string, isRadioButton: boolean) {
 
   const cancelar = (event: FormEvent) => {
     event.preventDefault();
-    alert("Cancelando...");
+    window.location.href = "/";
   };
 
 const FormBasico: React.FC = () => {

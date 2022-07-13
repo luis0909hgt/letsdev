@@ -6,7 +6,7 @@ import {
   Card,
   InputButton,
 } from "../../componentes";
-import { Logo } from "../../imagens";
+import { EuPaiper, Logo } from "../../imagens";
 import { useContext } from "react";
 import { MyContext } from "../../context";
 
@@ -70,6 +70,7 @@ const Home = () => {
         <s.GroupCards>
           {telas.map((card) => (
             <Card
+            key={card.titulo}
               titulo={card.titulo}
               link={card.link}
               descricao={card.descricao}
@@ -80,7 +81,9 @@ const Home = () => {
         <TituloSecao titulo="Um pouco sobre mim..." />
 
         <s.Row>
-          <img src={Logo} />
+          <s.Banner>
+          <img src={EuPaiper} />
+          </s.Banner>
           <s.Column>
             <h3>Aqui vai o nome do(a) Dev</h3>
             <p>
@@ -100,16 +103,18 @@ const Home = () => {
                 value="LinkedIn"
                 onClick={() => {
                   //Aqui vai o seu perfil do linkedIn
-                  window.open("https://www.linkedin.com", "_blank");
+                  window.open("https://www.linkedin.com/in/lu%C3%ADs-henrique-garafini-teixeira-a3a289201/", "_blank");
                 }}
+                title="Vai para o perfil no Linkedin"
               />
               <InputButton
                 type="submit"
                 value="Ver perfil"
                 onClick={() => {
                   //Aqui vai o seu perfil do GitHub
-                  window.open("https://github.com", "_blank");
+                  window.open("https://github.com/luis0909hgt", "_blank");
                 }}
+                title="Vai para o perfil no GitHub"
               />
             </s.ButtonGroup>
           </s.Column>
