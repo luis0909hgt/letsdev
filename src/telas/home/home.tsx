@@ -7,8 +7,13 @@ import {
   InputButton,
 } from "../../componentes";
 import { Logo } from "../../imagens";
+import { useContext } from "react";
+import { MyContext } from "../../context";
 
 const Home = () => {
+
+  const { setNomeUsuario, nomeUsuario } = useContext(MyContext);
+
   const telas = [
     {
       titulo: "Formulário em HTML e CSS",
@@ -48,7 +53,7 @@ const Home = () => {
     <s.Container>
       <Header />
       <s.Banner>
-        <h1>Que prazer te ver aqui, Fulano!</h1>
+        <h1>Que prazer te ver aqui, {nomeUsuario}!</h1>
         <img src={Logo} />
         <h2>
           Seja bem-vindo(a) ao Let’s Dev! O evento que vai transformar sua
