@@ -12,7 +12,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75rem;
   padding: 5.625rem 2.5rem;
 `;
 
@@ -24,7 +24,7 @@ export const Row = styled.div<RowProps>`
   display: flex;
   flex-direction: ${({ rightImage }) => (rightImage ? "row-reverse" : "row")};
   align-items: center;
-  gap: 25px;
+  gap: 1.5625rem;
   text-align: ${({ rightImage }) => (rightImage ? "right" : "left")};
 
   img {
@@ -32,7 +32,7 @@ export const Row = styled.div<RowProps>`
     height: 9.375rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     flex-direction: column;
     text-align: center;
 
@@ -89,7 +89,7 @@ export const GroupIcons = styled.div`
   width: 100%;
   margin: 1.25rem 0 3.75rem 0;
 
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     flex-wrap: wrap;
   }
 `;

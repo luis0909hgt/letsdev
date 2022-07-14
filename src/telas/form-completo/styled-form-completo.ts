@@ -8,8 +8,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1200px;
-    padding: 90px;
+    max-width: 75rem;
+    padding: 5.625rem;
 `;
 
 export const H2 = styled.h2`
@@ -18,14 +18,14 @@ export const H2 = styled.h2`
 
 export const Instrucao = styled.p`
     text-align: center;
-    margin: 20px 0 0 0;
+    margin: 1.25rem 0 0 0;
 `;
 
 export const Divisor = styled.hr`
     background: #e5e5e5;
-    height: 1px;
+    height: 0.0625rem;
     width: 100%;
-    margin: 100px 0 35px 0;
+    margin: 6.25rem 0 2.1875rem 0;
 `;
 
 export const Formulario = styled.form`
@@ -34,8 +34,8 @@ export const Formulario = styled.form`
     width: 100%;
 
     textarea {
-        min-height: 100px;
-        max-height: 200px;
+        min-height: 6.25rem;
+        max-height: 12.5rem;
         min-width: 50%;
         max-width: 100%;
     }
@@ -43,7 +43,7 @@ export const Formulario = styled.form`
 
 export const Aviso = styled.p`
     font-weight: 500;
-    margin-bottom: 100px;
+    margin-bottom: 6.25rem;
 
     strong {
         font-weight: 600;

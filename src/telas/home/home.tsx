@@ -81,20 +81,20 @@ const Home = () => {
         <TituloSecao titulo="Um pouco sobre mim..." />
 
         <s.Row>
-          <s.Banner>
-          <img src={EuPaiper} />
-          </s.Banner>
+            <img src={EuPaiper} />
           <s.Column>
-            <h3>Aqui vai o nome do(a) Dev</h3>
+            <h3>Me chamo Luís Henrique...</h3>
             <p>
-              Este espaço é destinado à sua descrição de perfil. Conta aqui quem
-              você é, gostos, hobbies e o que achar interessante. Descreve
-              também as características profissionais e o que te motivou a
-              ingressar na área do desenvolviemento de software.
+              ...tenho 22 anos e sou Desenvolvedor Jr na Paipe.
+              Amo futebol e esportes de uma forma geral, me considero alguém comunicativo
+              e que gosta de estar com os amigos. Gosto muito de jogar videogame
+              e da tecnologia. Sou uma pessoa focada no meu objetivo de ser um dev
+              cada vez melhor, buscando sempre estudar e aprender novas tecnologias.
             </p>
             <p>
-              Você pode substituir a foto a lado pela sua melhor foto e colocar
-              suas redes nos botões abaixo!
+              Minha motivação para estar nessa área é a de que podemos nos
+              reinventar a cada dia e estamos em cosntante evolução,
+              tanto profissional quanto pessoal.
             </p>
             <s.ButtonGroup>
               <InputButton
